@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GradeInfo Hub - Student Analytics Dashboard</title>
+  <!-- Google Fonts for Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Section -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><path d="m6 6h10"></path><path d="m6 10h10"></path></svg>
+        </div>
+        <div>
+          <h1>GradeInfo Hub</h1>
+          <p class="subtitle">Class Analytics & Grade Performance Tracker</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle light/dark theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Overview Stats Cards -->
+    <section class="stats-grid">
+      <!-- Total Students -->
+      <div class="stat-card">
+        <div class="stat-icon-wrapper blue">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">Total Students</span>
+          <h3 id="stat-total-students">0</h3>
+        </div>
+      </div>
+
+      <!-- Class Average -->
+      <div class="stat-card">
+        <div class="stat-icon-wrapper purple">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">Class Average</span>
+          <h3 id="stat-class-average">0.00</h3>
+        </div>
+      </div>
+
+      <!-- Passing Rate -->
+      <div class="stat-card">
+        <div class="stat-icon-wrapper green">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">Passing Rate</span>
+          <h3 id="stat-passing-rate">0.0%</h3>
+        </div>
+      </div>
+
+      <!-- Attendance Rate -->
+      <div class="stat-card">
+        <div class="stat-icon-wrapper yellow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">Attendance Rate</span>
+          <h3 id="stat-attendance-rate">0.0%</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls Area (Search & Filtering) -->
+    <section class="controls-panel">
+      <div class="search-box">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="search-input" placeholder="Search student by name...">
+      </div>
+
+      <div class="filters-container">
+        <div class="filter-group">
+          <button class="filter-pill active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="present">Present</button>
+          <button class="filter-pill" data-filter="absent">Absent</button>
+          <button class="filter-pill" data-filter="passed">Passed</button>
+          <button class="filter-pill" data-filter="failed">Failed</button>
+        </div>
+        <button id="add-student-btn" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          Add Student
+        </button>
+      </div>
+    </section>
+
+    <!-- Students Data Table Card -->
+    <main class="table-card">
+      <div class="table-wrapper">
+        <table id="students-table">
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Attendance</th>
+              <th class="text-center">Grade 1</th>
+              <th class="text-center">Grade 2</th>
+              <th class="text-center">Grade 3</th>
+              <th class="text-center">Average</th>
+              <th>Remarks</th>
+              <th class="text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Dynamically populated via JS -->
+          </tbody>
+        </table>
+      </div>
+      <!-- Empty State -->
+      <div id="empty-state" class="empty-state hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+        <h4>No Students Found</h4>
+        <p>Try modifying your search or filter options, or add a new student record.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add/Edit Student Modal -->
+  <div id="student-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title">Add Student Record</h3>
+        <button id="close-modal-btn" class="btn-icon" aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <form id="student-form">
+        <input type="hidden" id="student-id">
+        <div class="form-group">
+          <label for="student-name">Full Name</label>
+          <input type="text" id="student-name" required placeholder="e.g. John Dexter">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="student-attendance">Attendance Status</label>
+            <select id="student-attendance">
+              <option value="Present">Present</option>
+              <option value="Absent">Absent</option>
+            </select>
+          </div>
+        </div>
+        <div class="grades-grid">
+          <div class="form-group">
+            <label for="grade-g1">Grade 1 (G1)</label>
+            <input type="number" id="grade-g1" min="0" max="100" placeholder="0-100" required>
+          </div>
+          <div class="form-group">
+            <label for="grade-g2">Grade 2 (G2)</label>
+            <input type="number" id="grade-g2" min="0" max="100" placeholder="0-100" required>
+          </div>
+          <div class="form-group">
+            <label for="grade-g3">Grade 3 (G3)</label>
+            <input type="number" id="grade-g3" min="0" max="100" placeholder="0-100" required>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="cancel-btn" class="btn btn-secondary">Cancel</button>
+          <button type="submit" id="save-btn" class="btn btn-primary">Save Student</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- App Logic script -->
+  <script src="app.js"></script>
+</body>
+</html>
